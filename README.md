@@ -16,6 +16,7 @@ Foyo-BI 是一个面向业务、可视化、轻量的免费开源BI系统，目�
 
 ## 使用的关键技术
 
+* [JDK17](http://#)
 * [Kotlin](https://kotlinlang.org)
 * [Spring](https://spring.io)
 * [Ignite](http://ignite.apache.org)
