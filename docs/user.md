@@ -6,7 +6,7 @@
 
 * 姓名 - Name
 * 邮箱 - Email
-* 手机 - Phone
+* 手机(选项) - Phone
 * 头像 - Avatar
 * 密码 - Password
 * 禁用标识 - Disabled
@@ -23,3 +23,7 @@
 ## 权限
 
 预留方案
+
+## 会话
+
+采用JWT认证模式
