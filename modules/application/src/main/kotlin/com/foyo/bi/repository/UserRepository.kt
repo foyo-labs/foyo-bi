@@ -1,6 +1,7 @@
 package com.foyo.bi.repository
 
 import com.foyo.bi.entity.User
+import org.springframework.data.r2dbc.repository.Query
 import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 import reactor.core.publisher.Flux
 

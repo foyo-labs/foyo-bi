@@ -5,3 +5,4 @@ include(":foyo-bi-app")
 
 project(":foyo-bi-ignite").projectDir = file("modules/ignite-driver")
 project(":foyo-bi-app").projectDir = file("modules/application")
+
