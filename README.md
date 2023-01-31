@@ -31,6 +31,7 @@ Foyo-BI 是一个面向业务、可视化、轻量的免费开源BI系统，目�
 1. [用户、组、权限](./docs/user.md)
 2. [数据源](./docs/data-source.md)
 3. [元数据](./docs/meta-data.md)
+4. [建模工作流](./docs/workflow.md)
 4. [数据模型](./docs/data-model.md)
 5. [图表设计器](./docs/chart-design.md)
 
