@@ -25,7 +25,8 @@ dependencies {
   runtimeOnly("org.postgresql:postgresql")
   implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 
-  implementation(":foyo-bi-ignite")
+  implementation(project(":foyo-bi-ignite"))
+
   // Test
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

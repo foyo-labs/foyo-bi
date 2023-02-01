@@ -37,6 +37,7 @@ allprojects {
 }
 
 subprojects{
+
   dependencies {
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
