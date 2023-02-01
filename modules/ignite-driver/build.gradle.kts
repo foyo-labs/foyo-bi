@@ -1,19 +1,20 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
+  id("org.springframework.boot") version "2.7.8"
+  id("io.spring.dependency-management") version "1.0.15.RELEASE"
   kotlin("jvm") version "1.6.21"
   kotlin("plugin.spring") version "1.6.21"
 }
+
+val igniteVersion = "3.0.0-beta1"
 
 repositories {
   mavenCentral()
 }
 
+
+
 dependencies {
-  // kotlin support
-//  implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-  implementation("org.jetbrains.kotlin:kotlin-reflect")
-  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  implementation("org.apache.ignite:ignite-api:$igniteVersion")
 }
 
 

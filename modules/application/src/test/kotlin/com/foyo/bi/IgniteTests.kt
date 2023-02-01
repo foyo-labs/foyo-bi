@@ -1,15 +1,11 @@
 package com.foyo.bi
 
-import org.apache.ignite.Ignite
-import org.apache.ignite.IgnitionManager
-import org.apache.ignite.app.IgniteRunner
 import org.apache.ignite.client.IgniteClient
-import org.apache.ignite.compute.ComputeJob
-import org.apache.ignite.compute.JobExecutionContext
-import org.junit.jupiter.api.Test
-import java.nio.file.Path
-import java.util.concurrent.CompletableFuture
 
+import org.apache.ignite.network.ClusterNode
+import org.junit.jupiter.api.Test
+import com.foyo.bi.driver.ignite.SimpleComputer
+import java.util.concurrent.TimeUnit
 
 class IgniteTests {
 
@@ -20,30 +16,36 @@ class IgniteTests {
   }
 
   @Test
-  fun ignite_init() {
-
-    val path = System.getProperty("user.dir")
-
-    val configPath =
-      Path.of(IgniteTests::class.java.getResource("/ignite-config-rest-port-not-default.json").toURI())
-    val ign: CompletableFuture<Ignite> = IgniteRunner.start(
-      "--config-path", configPath.toAbsolutePath().toString(),
-      "--work-dir", "$path/work/ignite/",
-      "--node-name", "node"
-    )
-    IgnitionManager.init("node", listOf("node"), "cluster");
-
-//    val client = IgniteClient.Builder().addresses("127.0.0.1:10800").build()
-//    val computer = client.compute()
-//    val nodes: Set<ClusterNode> = HashSet(client.clusterNodes())
-//    computer.execute(nodes, SimpleComputer::class.java, "hello", "word")
+  fun test_create_table(){
+    val client = IgniteClient.Builder().addresses("127.0.0.1:10800").build()
+//    client.sql().createSession().executeBatch().execute(null, "INSERT INTO CITIES()").close()
   }
-}
 
-class SimpleComputer : ComputeJob<String> {
-  override fun execute(context: JobExecutionContext?, vararg args: Any?): String? {
-    print("ignite computer....")
-    return args.joinToString(truncated = ",")
+  @Test
+  fun test_insert_data(){
+    val client = IgniteClient.Builder().addresses("127.0.0.1:10800").build()
+    client.sql().createSession().execute(null, "CREATE TABLE CITIES (ID INT PRIMARY KEY, NAME VARCHAR)").close()
+  }
+
+
+
+  @Test
+  fun test_query_table(){
+    val client = IgniteClient.Builder().addresses("127.0.0.1:10800").build()
+    val rs = client.sql().createSession().execute(null, "select * from person")
+    while (rs.hasNext()){
+      val row = rs.next()
+      val name = row.stringValue("CITY")
+      println("rs: $name")
+    }
+  }
+  @Test
+  fun ignite_init() {
+    val client = IgniteClient.Builder().addresses("127.0.0.1:10800").build()
+    val nodes: Set<ClusterNode> = HashSet(client.clusterNodes())
+    val future = client.compute().execute(nodes, SimpleComputer::class.java, "hello", "word")
+    future.thenAccept { res ->  println(res)}
+    // no result?
   }
 }
 
