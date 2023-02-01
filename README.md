@@ -19,12 +19,12 @@ Foyo-BI 是一个面向业务、可视化、轻量的免费开源BI系统，目�
 * [JDK11](http://#)
 * [Kotlin](https://kotlinlang.org)
 * [Spring](https://spring.io)
-* [Ignite](http://ignite.apache.org)
+* [Ignite3](https://ignite.apache.org/docs/3.0.0-beta/index)
 * [Postgresql](https://www.postgresql.org)
 * [Nextjs](https://nextjs.org/)
 * [ECharts](https://echarts.apache.org/zh/index.html)
 
-## 模块
+## 功能模块
 
 为了能更清晰了解本系统，以下说明各模块的设计与功能:
 
@@ -32,12 +32,16 @@ Foyo-BI 是一个面向业务、可视化、轻量的免费开源BI系统，目�
 2. [数据源](./docs/data-source.md)
 3. [元数据](./docs/meta-data.md)
 4. [建模工作流](./docs/workflow.md)
-4. [数据模型](./docs/data-model.md)
-5. [图表设计器](./docs/chart-design.md)
+5. [数据模型](./docs/data-model.md)
+6. [图表设计器](./docs/chart-design.md)
+
+
+## 项目结构
+
 
 ## 如何运行?
 
-### Ingite3 beta
+### Ignite3 beta
 
 #### 开发环境
 
