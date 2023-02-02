@@ -1,0 +1,47 @@
+{
+  "name": "近三月销量统计",
+  "description": "统计近三个月电商A商品的销量柱状图",
+  "inputs": [{
+    "id": "eshop_db",
+    "description": "电商数据库",
+    "type": "mysql",
+    "configuration": {
+      "host": "",
+      "user": "",
+      "password": ""
+    },
+    "next": ["", "", ""]
+  }],
+  "transformations": [
+    {
+      "id": "orders",
+      "description": "订单数据",
+      "order": 0,
+      "dbName": "orders",
+      "fields": [
+        {"name": "amount"},
+        {"name": "orderTime"}
+      ],
+      "next": ["filter_orderTime"]
+    }
+  ],
+  "filters": [{
+    "id": "filter_orderTime",
+    "expression": "orderTime >= 2023-01-01:00:00:00",
+    "next": [""]
+  }],
+  "operations": [{
+    "name": "groupByKey",
+    "key": "userId",
+    "next": ["chart-1"]
+  }],
+  "outputs": [{
+    "name": "chart-1",
+    "type": "chart",
+    "configuration": {}
+  },{
+    "name": "table-1",
+    "type": "table",
+    "configuration": {}
+  }]
+}
