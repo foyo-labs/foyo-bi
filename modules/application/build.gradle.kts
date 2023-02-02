@@ -25,6 +25,9 @@ dependencies {
   runtimeOnly("org.postgresql:postgresql")
   implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 
+  // Kotlin Dataframe
+  implementation("org.jetbrains.kotlinx:dataframe:0.9.1")
+
   implementation(project(":foyo-bi-ignite"))
 
   // Test
