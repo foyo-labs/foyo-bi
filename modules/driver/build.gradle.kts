@@ -14,7 +14,7 @@ repositories {
 
 
 dependencies {
-  implementation("org.apache.ignite:ignite-api:$igniteVersion")
+  implementation(libs.ignite.api)
 }
 
 

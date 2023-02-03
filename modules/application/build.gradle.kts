@@ -5,19 +5,14 @@ plugins {
   kotlin("plugin.spring") version "1.6.21"
 }
 
-val igniteVersion = "3.0.0-beta1"
-val mysqlVersion = "8.0.30"
-val kotlindfVersion = "0.9.1"
-
 dependencies {
 
   // Spring
   implementation("org.springframework.boot:spring-boot-starter-webflux")
 
   // Ignite3
-  implementation("org.apache.ignite:ignite-api:$igniteVersion")
-  implementation("org.apache.ignite:ignite-client:$igniteVersion")
-  implementation("org.apache.ignite:ignite-api:$igniteVersion")
+  implementation(libs.ignite.api)
+  implementation(libs.ignite.client)
 
   // development stage support
   developmentOnly("org.springframework.boot:spring-boot-devtools")
@@ -29,10 +24,10 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 
   // MySQL/Mariadb
-  implementation("mysql:mysql-connector-java:$mysqlVersion")
+  implementation(libs.mysql.java)
 
   // Kotlin Dataframe
-  implementation("org.jetbrains.kotlinx:dataframe:$kotlindfVersion")
+  implementation(libs.dataframe)
 
   implementation(project(":foyo-bi-driver"))
   implementation(project(":foyo-bi-sdk"))

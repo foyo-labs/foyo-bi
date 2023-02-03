@@ -9,3 +9,4 @@ project(":foyo-bi-driver").projectDir = file("modules/driver")
 project(":foyo-bi-sdk").projectDir = file("modules/sdk")
 project(":foyo-bi-app").projectDir = file("modules/application")
 
+enableFeaturePreview("VERSION_CATALOGS")

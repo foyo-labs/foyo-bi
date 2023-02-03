@@ -5,12 +5,13 @@ plugins {
   kotlin("plugin.spring") version "1.6.21"
 }
 
-
 repositories {
   mavenCentral()
 }
 
-
+dependencies {
+  implementation(libs.dataframe)
+}
 
 description = "foyo-bi-sdk"
 

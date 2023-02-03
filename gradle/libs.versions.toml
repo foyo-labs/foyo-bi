@@ -1,0 +1,11 @@
+[versions]
+kotlin = "1.8.0"
+dataframeVersion = "0.9.1"
+mysqlVersion = "8.0.30"
+igniteVersion = "3.0.0-beta1"
+
+[libraries]
+dataframe = { group = "org.jetbrains.kotlinx", name = "dataframe", version.ref = "dataframeVersion" }
+mysql-java = { group = "mysql", name = "mysql-connector-java", version.ref = "mysqlVersion" }
+ignite-api = { group = "org.apache.ignite", name = "ignite-api", version.ref = "igniteVersion" }
+ignite-client = { group = "org.apache.ignite", name = "ignite-client", version.ref = "igniteVersion" }
