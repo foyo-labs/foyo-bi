@@ -5,6 +5,9 @@
 ## OWNER
 * sassali@163.com
 
+## OWNER
+* sassali@163.com
+
 ## 数据源属性
 
 不同数据源拥有不等的属性。

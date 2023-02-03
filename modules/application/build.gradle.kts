@@ -15,6 +15,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-webflux")
 
   // Ignite3
+  implementation("org.apache.ignite:ignite-api:$igniteVersion")
   implementation("org.apache.ignite:ignite-client:$igniteVersion")
   implementation("org.apache.ignite:ignite-api:$igniteVersion")
 
@@ -35,7 +36,6 @@ dependencies {
 
   implementation(project(":foyo-bi-driver"))
   implementation(project(":foyo-bi-sdk"))
-
   // Test
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
