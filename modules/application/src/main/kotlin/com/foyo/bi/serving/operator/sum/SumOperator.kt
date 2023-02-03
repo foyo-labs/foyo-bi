@@ -1,6 +1,7 @@
 package com.foyo.bi.serving.operator.sum
 
-import com.foyo.bi.serving.operator.Operator
+import com.foyo.bi.sdk.pipeline.aggregation.operator.Operator
+
 
 /**
  * 合计操作

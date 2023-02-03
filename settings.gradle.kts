@@ -1,10 +1,12 @@
 rootProject.name = "foyo-bi"
 
-include(":foyo-bi-ignite")
+include(":foyo-bi-driver")
 include(":foyo-bi-app")
+include(":foyo-bi-sdk")
 
-//ignite驱动包，用于独立计算，尽量不依赖第三方包，编译时可使用ignite中自带的库
-project(":foyo-bi-ignite").projectDir = file("modules/ignite-driver")
+//驱动包, InMemory/Spark/Ignite/Flink
+project(":foyo-bi-driver").projectDir = file("modules/driver")
+project(":foyo-bi-sdk").projectDir = file("modules/sdk")
 
 //主程序包
 project(":foyo-bi-app").projectDir = file("modules/application")
