@@ -8,7 +8,6 @@ plugins {
 }
 
 
-
 allprojects {
   apply(plugin = "kotlin")
 
