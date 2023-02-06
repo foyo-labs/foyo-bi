@@ -10,10 +10,6 @@ dependencies {
   // Spring
   implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-  // Ignite3
-  implementation(libs.ignite.api)
-  implementation(libs.ignite.client)
-
   // development stage support
   developmentOnly("org.springframework.boot:spring-boot-devtools")
 
@@ -24,12 +20,11 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 
   // MySQL/Mariadb
-  implementation(libs.mysql.java)
+  implementation(libs.mysql)
 
   // Kotlin Dataframe
   implementation(libs.dataframe)
 
-  implementation(project(":foyo-bi-driver"))
   implementation(project(":foyo-bi-sdk"))
   // Test
   testImplementation("org.springframework.boot:spring-boot-starter-test")
