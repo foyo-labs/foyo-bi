@@ -16,7 +16,10 @@ dependencies {
   implementation(libs.arrow.format)
   implementation(libs.arrow.memory)
   implementation(libs.arrow.jdbc)
+  implementation(libs.calcite)
   runtimeOnly("org.postgresql:postgresql")
+
+  implementation(project(":foyo-bi-sdk"))
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

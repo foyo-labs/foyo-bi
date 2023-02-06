@@ -2,7 +2,7 @@ package com.foyo.bi.sdk.collector
 
 
 /**
- * Parquet/JSON/CSV/InputStream
+ * Arrow/JSON/CSV
  */
 interface InputFormat {
 
