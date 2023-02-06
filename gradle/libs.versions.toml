@@ -3,6 +3,7 @@ kotlin = "1.8.0"
 dataframe = "0.9.1"
 mysql = "8.0.30"
 arrow = "10.0.0"
+calcite = "1.32.0"
 junit = "4.13.2"
 postgresql = "42.3.8"
 
@@ -14,5 +15,7 @@ arrow-format = { group = "org.apache.arrow", name = "arrow-format", version.ref 
 arrow-vector = { group = "org.apache.arrow", name = "arrow-vector", version.ref = "arrow" }
 arrow-memory = { group = "org.apache.arrow", name = "arrow-memory-unsafe", version.ref = "arrow" }
 arrow-jdbc = { group = "org.apache.arrow", name = "arrow-jdbc", version.ref = "arrow" }
+
+calcite = { group = "org.apache.calcite", name = "calcite-core", version.ref = "calcite" }
 
 junit = { module = "junit:junit", version.ref = "junit" }
