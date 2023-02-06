@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
   implementation(libs.dataframe)
+  testImplementation(libs.junit)
 }
 
 description = "foyo-bi-sdk"
