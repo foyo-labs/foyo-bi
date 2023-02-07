@@ -11,6 +11,8 @@ postgresql = "42.3.8"
 junit = "4.13.2"
 kotest = "5.5.5"
 
+logging = "3.0.4"
+
 [libraries]
 dataframe = { group = "org.jetbrains.kotlinx", name = "dataframe", version.ref = "dataframe" }
 mysql = { group = "mysql", name = "mysql-connector-java", version.ref = "mysql" }
@@ -21,6 +23,7 @@ arrow-memory = { group = "org.apache.arrow", name = "arrow-memory-unsafe", versi
 arrow-jdbc = { group = "org.apache.arrow", name = "arrow-jdbc", version.ref = "arrow" }
 calcite-core = { group = "org.apache.calcite", name = "calcite-core", version.ref = "calcite" }
 calcite-csv = { group = "org.apache.calcite", name = "calcite-csv", version.ref = "calcite" }
+logging = { group = "io.github.microutils", name = "kotlin-logging-jvm", version.ref = "logging" }
 
 junit = { module = "junit:junit", version.ref = "junit" }
 kotest-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }

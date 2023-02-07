@@ -11,6 +11,9 @@ repositories {
 
 dependencies {
   implementation(libs.dataframe)
+  implementation(libs.arrow.memory)
+  implementation(libs.arrow.vector)
+  implementation(libs.calcite.core)
   testImplementation(libs.junit)
 }
 

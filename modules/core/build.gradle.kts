@@ -16,8 +16,10 @@ dependencies {
   implementation(libs.arrow.jdbc)
   implementation(libs.calcite.core)
   implementation(libs.calcite.csv)
-  runtimeOnly("org.postgresql:postgresql")
-
+  implementation(libs.logging)
+  implementation("org.postgresql:postgresql")
+  implementation("ch.qos.logback:logback-classic:1.2.3")
+  implementation("org.slf4j:slf4j-api:1.7.30")
   implementation(project(":foyo-bi-sdk"))
   testImplementation(libs.kotest.core)
   testImplementation(libs.kotest.junit5)

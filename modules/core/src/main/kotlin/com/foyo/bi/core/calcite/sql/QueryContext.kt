@@ -6,7 +6,6 @@ import org.apache.calcite.sql.SqlSelect
 import java.io.Serializable
 
 class QueryContext: Serializable {
-
   var statement: String? = null
   var originalPlan: SqlNode? = null
   var currentSelectNode: SqlSelect? = null

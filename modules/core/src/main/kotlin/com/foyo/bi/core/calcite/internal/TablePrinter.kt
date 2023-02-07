@@ -46,14 +46,93 @@ object TablePrinter {
     }
     var rowCount = 0
     while (rs.next()) {
-      // TODO ...
+      for (i in 0 until columnCount) {
+        val c = columns[i]
+        var value = if (c.typeCategory == CATEGORY_OTHER) {
+          "(" + c.typeName + ")"
+        } else {
+          if (rs.getObject(i + 1) == null) "NULL" else rs.getObject(i + 1).toString()
+        }
+        when (c.typeCategory) {
+          CATEGORY_DOUBLE ->
+            if (value != "NULL") {
+              val dValue = rs.getDouble(i + 1)
+              value = String.format("%.3f", dValue)
+            }
+
+          CATEGORY_STRING -> {
+            c.justifyLeft()
+            if (value.length > maxStringColWidth) {
+              value = value.substring(0, maxStringColWidth - 3) + "..."
+            }
+          }
+        }
+        c.width = if (value.length > c.width) value.length else c.width
+        c.values.add(value)
+        c.typeValues.add(rs.getObject(i + 1))
+      }
+      rowCount++
     }
     return Table(tableNames, rowCount, columns)
   }
 
   @JvmStatic
   fun print(table: Table?) {
-    // TODO..
+    if (table == null) {
+      return
+    }
+    val tableNames = table.tableNames
+    val rowCount = table.rowCount
+    val columns = table.columns
+    val strToPrint = StringBuilder()
+    val rowSeparator = StringBuilder()
+    columns.forEach { c ->
+      var width = c.width
+      val name: String = c.label
+      var diff = width - name.length
+
+      if (diff % 2 == 1) {
+        width++
+        diff++
+        c.width = width
+      }
+      val paddingSize = diff / 2
+      val padding = String(CharArray(paddingSize)).replace("\u0000", " ")
+
+      val toPrint = "| $padding$name$padding "
+      strToPrint.append(toPrint)
+      rowSeparator.append("+")
+      rowSeparator.append(String(CharArray(width + 2)).replace("\u0000", "-"))
+    }
+    var lineSeparator = System.getProperty("line.separator")
+    lineSeparator = lineSeparator ?: "\n"
+
+    rowSeparator.append("+").append(lineSeparator)
+
+    strToPrint.append("|").append(lineSeparator)
+    strToPrint.insert(0, rowSeparator)
+    strToPrint.append(rowSeparator)
+
+    val sj = tableNames.joinToString(", ")
+
+    var info = "Printing $rowCount"
+    info += if (rowCount > 1) " rows from " else " row from "
+    info += if (tableNames.size > 1) "tables " else "table "
+    info += sj
+
+    println(info)
+    print(strToPrint.toString())
+
+    var format: String
+    for (i in 0 until rowCount) {
+      columns.forEach { c ->
+        format = String.format("| %%%s%ds ", c.justifyFlag, c.width)
+        print(String.format(format, c.values[i]))
+      }
+      println("|")
+      print(rowSeparator)
+    }
+    println()
   }
 
   private fun whichCategory(type: Int): Int {

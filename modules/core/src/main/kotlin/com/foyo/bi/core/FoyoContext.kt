@@ -1,12 +1,15 @@
 package com.foyo.bi.core
 
-import com.foyo.bi.core.calcite.sql.FoyoSqlPlanner
+import com.foyo.bi.core.calcite.sql.SqlPlanner
 import java.util.*
 
 object FoyoContext {
 
+  val catalog by lazy {
+
+  }
   val sqlPlanner by lazy {
-    FoyoSqlPlanner()
+      SqlPlanner()
   }
 
 

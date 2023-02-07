@@ -7,7 +7,7 @@ import com.foyo.bi.core.calcite.internal.Table
 interface SqlChecker {
 
   fun sql(statement: String): SqlResult {
-    val rs = QueryExecution(statement, SessionId.fakeSessionId()).execute()
+    val rs = QueryExecution(statement).execute()
     return SqlResult(statement, rs.toTable())
   }
 
