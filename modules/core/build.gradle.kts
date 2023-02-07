@@ -9,18 +9,18 @@ repositories {
   mavenCentral()
 }
 
-
-
 dependencies {
   implementation(libs.arrow.vector)
   implementation(libs.arrow.format)
   implementation(libs.arrow.memory)
   implementation(libs.arrow.jdbc)
-  implementation(libs.calcite)
+  implementation(libs.calcite.core)
+  implementation(libs.calcite.csv)
   runtimeOnly("org.postgresql:postgresql")
 
   implementation(project(":foyo-bi-sdk"))
-  testImplementation("org.springframework.boot:spring-boot-starter-test")
+  testImplementation(libs.kotest.core)
+  testImplementation(libs.kotest.junit5)
 }
 
 
