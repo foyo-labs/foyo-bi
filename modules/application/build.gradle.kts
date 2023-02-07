@@ -25,7 +25,6 @@ dependencies {
   // Kotlin Dataframe
   implementation(libs.dataframe)
 
-  implementation(project(":foyo-bi-sdk"))
   // Test
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
