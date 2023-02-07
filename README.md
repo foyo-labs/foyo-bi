@@ -18,10 +18,12 @@ Foyo-BI 是一个面向业务、可视化、轻量的免费开源BI系统，目�
 
 * [JDK11](http://#)
 * [Kotlin](https://kotlinlang.org)
-* [KotlinDataframe](https://kotlin.github.io/dataframe/gettingstarted.html)
+* [Dataframe](https://kotlin.github.io/dataframe)
+* [Arrow](https://arrow.apache.org)
+* [Calcite](https://calcite.apache.org)
 * [Spring](https://spring.io)
-* [Postgresql](https://www.postgresql.org)
-* [Nextjs](https://nextjs.org/)
+* [Postgres](https://www.postgresql.org)
+* [NextJS](https://nextjs.org/)
 * [ECharts](https://echarts.apache.org/zh/index.html)
 
 ## 功能模块
