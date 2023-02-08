@@ -1,7 +1,6 @@
 package com.foyo.bi.core.calcite
 
-import com.foyo.bi.core.calcite.internal.TablePrinter
-import com.foyo.bi.core.calcite.sql.SqlChecker
+import com.foyo.bi.core.internal.TablePrinter
 import io.kotest.core.spec.style.StringSpec
 import org.apache.calcite.adapter.csv.CsvSchema
 import org.apache.calcite.adapter.csv.CsvTable
@@ -20,7 +19,7 @@ import java.util.*
 /**
  * Using otest, It's necessary to install kotest intellij plugin
  */
-class SqlTest: SqlChecker, StringSpec() {
+class SqlTest: StringSpec() {
 
   init {
     "use calcite load simple csv data" {

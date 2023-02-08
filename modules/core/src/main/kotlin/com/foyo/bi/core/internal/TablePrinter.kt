@@ -1,4 +1,4 @@
-package com.foyo.bi.core.calcite.internal
+package com.foyo.bi.core.internal
 
 import java.sql.ResultSet
 import java.sql.Types
