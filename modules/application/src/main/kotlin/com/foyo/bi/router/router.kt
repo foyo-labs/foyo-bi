@@ -1,10 +1,13 @@
 package com.foyo.bi.router
 
-import com.foyo.bi.handler.UserRouterHandler
-import org.springframework.web.reactive.function.server.coRouter
+import io.ktor.server.application.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 
-fun apiRoutes(userHandler: UserRouterHandler) = coRouter {
-  "/api".nest {
-    GET("/users", userHandler::findAll)
+fun Application.configureRouting() {
+  routing {
+    get("/") {
+      call.respondText("Hello World!")
+    }
   }
 }

@@ -11,6 +11,10 @@ postgresql = "42.3.8"
 junit = "4.13.2"
 kotest = "5.5.5"
 
+ktor = "2.2.3"
+logback = "1.2.11"
+slf4j = "2.0.6"
+
 [libraries]
 dataframe = { group = "org.jetbrains.kotlinx", name = "dataframe", version.ref = "dataframe" }
 mysql = { group = "mysql", name = "mysql-connector-java", version.ref = "mysql" }
@@ -21,6 +25,14 @@ arrow-memory = { group = "org.apache.arrow", name = "arrow-memory-unsafe", versi
 arrow-jdbc = { group = "org.apache.arrow", name = "arrow-jdbc", version.ref = "arrow" }
 calcite-core = { group = "org.apache.calcite", name = "calcite-core", version.ref = "calcite" }
 calcite-csv = { group = "org.apache.calcite", name = "calcite-csv", version.ref = "calcite" }
+
+ktor-core = { group = "io.ktor", name = "ktor-server-core-jvm", version.ref = "ktor" }
+ktor-netty = { group = "io.ktor", name = "ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-pages = { group = "io.ktor", name = "ktor-server-status-pages-jvm", version.ref = "ktor" }
+ktor-headers = { group = "io.ktor", name = "ktor-server-default-headers-jvm", version.ref = "ktor" }
+
+logback = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+
 
 junit = { module = "junit:junit", version.ref = "junit" }
 kotest-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
