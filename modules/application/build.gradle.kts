@@ -1,5 +1,7 @@
 plugins {
   application
+  id("io.ktor.plugin") version "2.2.3"
+  id("org.jetbrains.kotlin.plugin.serialization") version "1.8.0"
   kotlin("jvm") version "1.8.0"
 }
 
@@ -12,6 +14,8 @@ dependencies {
 
   implementation(libs.ktor.core)
   implementation(libs.ktor.netty)
+  implementation(libs.ktor.negotiation)
+  implementation(libs.ktor.json)
   implementation(libs.logback)
 
 //  runtimeOnly("org.postgresql:postgresql")

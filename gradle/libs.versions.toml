@@ -30,7 +30,8 @@ ktor-core = { group = "io.ktor", name = "ktor-server-core-jvm", version.ref = "k
 ktor-netty = { group = "io.ktor", name = "ktor-server-netty-jvm", version.ref = "ktor" }
 ktor-pages = { group = "io.ktor", name = "ktor-server-status-pages-jvm", version.ref = "ktor" }
 ktor-headers = { group = "io.ktor", name = "ktor-server-default-headers-jvm", version.ref = "ktor" }
-
+ktor-negotiation = { group = "io.ktor", name = "ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 logback = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
 
 

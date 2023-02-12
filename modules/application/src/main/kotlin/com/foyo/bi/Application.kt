@@ -2,13 +2,21 @@ package com.foyo.bi
 
 import com.foyo.bi.router.configureRouting
 import io.ktor.server.application.*
-import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 
-fun main() {
-  embeddedServer(Netty, port = 7788, module = Application::module).start(wait = true)
-}
+import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.plugins.contentnegotiation.*
+
+fun main(args: Array<String>): Unit = EngineMain.main(args)
+
 
 fun Application.module() {
   configureRouting()
+  configureSerialization()
+}
+
+fun Application.configureSerialization() {
+  install(ContentNegotiation) {
+    json()
+  }
 }
