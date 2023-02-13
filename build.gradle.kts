@@ -1,18 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  id("org.springframework.boot") version "2.7.8"
-  id("io.spring.dependency-management") version "1.0.15.RELEASE"
   kotlin("jvm") version "1.8.0"
-  kotlin("plugin.spring") version "1.6.21"
 }
 
 
 allprojects {
   apply(plugin = "kotlin")
-
   repositories {
     mavenCentral()
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
   }
 
 }
@@ -40,10 +37,7 @@ allprojects {
 }
 
 subprojects{
-
   dependencies {
-    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
   }
