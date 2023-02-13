@@ -15,6 +15,10 @@ ktor = "2.2.3"
 logback = "1.2.11"
 slf4j = "2.0.6"
 
+exposed = "0.41.1"
+koin = "3.3.1"
+hikari = "5.0.0"
+
 [libraries]
 dataframe = { group = "org.jetbrains.kotlinx", name = "dataframe", version.ref = "dataframe" }
 mysql = { group = "mysql", name = "mysql-connector-java", version.ref = "mysql" }
@@ -34,7 +38,18 @@ ktor-negotiation = { group = "io.ktor", name = "ktor-server-content-negotiation"
 ktor-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 logback = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
 
+koin-core = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin" }
+
+exposed-core = { group = "org.jetbrains.exposed", name = "exposed-core", version.ref = "exposed" }
+exposed-dao = { group = "org.jetbrains.exposed", name = "exposed-dao", version.ref = "exposed" }
+exposed-javatime = { group = "org.jetbrains.exposed", name = "exposed-java-time", version.ref = "exposed" }
+exposed-jodatime = { group = "org.jetbrains.exposed", name = "exposed-jodatime", version.ref = "exposed" }
+exposed-jdbc = { group = "org.jetbrains.exposed", name = "exposed-jdbc", version.ref = "exposed" }
+postgres = { group = "org.postgresql", name = "postgresql", version.ref = "postgresql" }
+hikari-cp = { group = "com.zaxxer", name = "HikariCP", version.ref = "hikari" }
 
 junit = { module = "junit:junit", version.ref = "junit" }
 kotest-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
 kotest-junit5 = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
+
+

@@ -16,10 +16,15 @@ dependencies {
   implementation(libs.ktor.netty)
   implementation(libs.ktor.negotiation)
   implementation(libs.ktor.json)
+  implementation(libs.koin.core)
   implementation(libs.logback)
-
-//  runtimeOnly("org.postgresql:postgresql")
-
+  implementation(libs.exposed.core)
+  implementation(libs.exposed.dao)
+  implementation(libs.exposed.javatime)
+  implementation(libs.exposed.jodatime)
+  implementation(libs.exposed.jdbc)
+  implementation(libs.postgres)
+  implementation(libs.hikari.cp)
   // MySQL/Mariadb
   implementation(libs.mysql)
 
